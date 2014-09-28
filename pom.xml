@@ -7,9 +7,9 @@
     <artifactId>gothshild-test</artifactId>
     <version>0.1</version>
 
-    <properties>
-
-    </properties>
+     <organization>
+        <name>Mysterion Home</name>
+    </organization>
 
     <build>
         <plugins>
