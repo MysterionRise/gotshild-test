@@ -79,19 +79,9 @@ public class Controller {
     private void nextInstruction() {
         if (currentImage < 3) {
             currentImage++;
-            final String url = Controller.class.getResource(getPathToRes() +
-                    "instruction-" + currentImage + ".jpg").toString();
+            final String url = this.getClass().getResource("/instruction-" + currentImage + ".jpg").toString();
             imageView.setImage(new Image(url));
         }
-    }
-
-    private String getPathToRes() {
-        int t = Controller.class.getPackage().getName().split("\\.").length;
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < t; ++i) {
-            sb.append("../");
-        }
-        return sb.toString();
     }
 
     private void goNextStep(int step) {
@@ -100,8 +90,7 @@ public class Controller {
             return;
         }
         final long startTime = System.currentTimeMillis();
-        String url = Controller.class.getResource(getPathToRes() + "tasks/" + step + ".jpg").toString();
-        System.out.println(url);
+        String url = this.getClass().getResource("/tasks/" + step + ".jpg").toString();
         ImageView task = new ImageView(new Image(url));
         task.setLayoutX(100);
         task.setLayoutY(250);

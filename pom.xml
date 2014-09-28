@@ -30,6 +30,7 @@
                 <version>8.1.2</version>
                 <configuration>
                     <mainClass>org.mystic.gotshild.Main</mainClass>
+                    <jfxMainAppJarName>GotshildTest</jfxMainAppJarName>
                 </configuration>
             </plugin>
         </plugins>
