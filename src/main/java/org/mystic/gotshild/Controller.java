@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -34,6 +35,8 @@ public class Controller {
     ImageView patternG;
     @FXML
     ImageView patternD;
+    @FXML
+    TextArea instructionText;
     private PrintWriter out;
     private String login;
     private int currentImage = 1;
@@ -54,7 +57,7 @@ public class Controller {
 
     @FXML
     private void startGotshildTest() throws FileNotFoundException {
-        if (!userName.getText().equalsIgnoreCase("Введите свое имя") && userName.getText().length() > 0) {
+        if (!userName.getText().equalsIgnoreCase("Enter your name") && userName.getText().length() > 0) {
             out = new PrintWriter((userName.getText() + (System.currentTimeMillis() % 100000)) + ".txt");
             this.login = userName.getText();
             out.println(login);
@@ -77,11 +80,32 @@ public class Controller {
 
     @FXML
     private void nextInstruction() {
-        if (currentImage < 3) {
-            currentImage++;
-            final String url = this.getClass().getResource("/instruction-" + currentImage + ".jpg").toString();
-            imageView.setImage(new Image(url));
+        switch (currentImage) {
+            case 1: {
+                showNextInstruction();
+                instructionText.setText("Example. \n" +
+                        "Demonstrate the correct solution to these tasks");
+                break;
+            }
+            case 2: {
+                showNextInstruction();
+                instructionText.setText("CAUTION\n" +
+                        "\n" +
+                        "1. In each complex figure there is an elements, it is of the same size and are also located, as a sample.\n" +
+                        "\n" +
+                        "2. In each complex figure always have an element and it is always only one.");
+                break;
+            }
+            default: {
+                break;
+            }
         }
+    }
+
+    private void showNextInstruction() {
+        currentImage++;
+        final String url = this.getClass().getResource("/instruction-" + currentImage + ".jpg").toString();
+        imageView.setImage(new Image(url));
     }
 
     private void goNextStep(int step) {

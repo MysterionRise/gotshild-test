@@ -18,7 +18,12 @@
                 <Font size="15.0" />
             </font>
         </Label>
-      <ImageView fx:id="imageView" fitHeight="478.0" fitWidth="456.0" layoutX="162.0" layoutY="237.0" onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true">
+
+        <TextArea fx:id="instructionText" editable="false" layoutX="200.0" layoutY="100.0" prefHeight="175.0"
+                  prefWidth="400.0"
+                  text="Each complex figure is one of the following elements. Which of these elements is contained in each complex figure in the picture?"
+                  wrapText="true"/>
+      <ImageView fx:id="imageView" fitHeight="478.0" fitWidth="456.0" layoutX="162.0" layoutY="250.0" onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../instruction-1.jpg" />
          </image>
