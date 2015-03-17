@@ -11,8 +11,8 @@
 <Group id="Gotshild Test" fx:id="rootGroup" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mystic.gotshild.Controller">
     <children>
         <Button layoutX="250.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#closeWindow" text="Exit" />
-        <Button fx:id="startTestButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#startGotshildTest" prefWidth="200.0" text="Start Gotshild Test" />
-        <TextField fx:id="userName" layoutX="14.0" layoutY="50.0" onMouseClicked="#clearTextField" prefWidth="200.0" text="Введите свое имя" />
+        <Button fx:id="startTestButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#startGotshildTest" prefWidth="200.0" text="Start Gotshild Test" disable="true" />
+        <TextField fx:id="userName" layoutX="14.0" layoutY="50.0" onMouseClicked="#clearTextField" prefWidth="200.0" text="Enter your name" />
         <Label fx:id="label" layoutX="50.0" layoutY="75.0" prefWidth="400.0" text="" visible="false">
             <font>
                 <Font size="15.0" />

@@ -65,6 +65,7 @@ public class Controller {
             userName.setVisible(false);
             setPatternsVisible(true);
             imageView.setVisible(false);
+            instructionText.setVisible(false);
             int step = 1;
             goNextStep(step);
         }
@@ -94,6 +95,7 @@ public class Controller {
                         "1. In each complex figure there is an elements, it is of the same size and are also located, as a sample.\n" +
                         "\n" +
                         "2. In each complex figure always have an element and it is always only one.");
+                startTestButton.setDisable(false);
                 break;
             }
             default: {
