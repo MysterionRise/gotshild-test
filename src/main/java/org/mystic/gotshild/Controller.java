@@ -113,6 +113,8 @@ public class Controller {
     private void goNextStep(int step) {
         if (step > SIZE) {
             setPatternsVisible(false);
+            instructionText.setVisible(true);
+            instructionText.setText("You successfully finish the test! ");
             return;
         }
         final long startTime = System.currentTimeMillis();
