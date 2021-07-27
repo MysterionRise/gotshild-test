@@ -9,32 +9,24 @@
 Наиболее четкие различия между полезависимыми и поленезависимыми проявляются в особенностях восприятия. Полезависимые в большей мере подвержены разного рода иллюзиям восприятия. Для поленезависимых воспринимаемая "картинка" значительно более структурирована, чем для полезависимых. Это проявляется в том, что для первых воспринимаемый объект, качества объекта воспринимаются самостоятельно, отдельно от других объектов, качеств этих объектов, воспринимаемых одновременно с этим объектом. Иначе говоря, восприятие поленезависимых - аналитично, восприятие полезависимых синтетично.
 
 
-How to run
-==============
-JDK 8 required for building
-
-### How to build:
+### How to run locally:
 
 ```sh
-$ mvn clean jfx:jar
+$ gradlew run
 ```
 
-Then you could run jar file from `target/jfx/app`
-
-### How to run:
+### How to build Jar executable:
 
 ```sh
-$ mvn jfx:run
+$ gradlew assemble
 ```
+
+You could later run jar (JDK is required) located in `build/distributions`
 
 ### How to build native package:
 
 ```sh
-$ mvn clean jfx:native
+$ gradlew jlink
 ```
 
-### How to build web package:
-
-```sh
-$ mvn clean jfx:web
-```
+You could later run executable located in `build/image/bin`
