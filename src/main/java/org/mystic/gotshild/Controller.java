@@ -82,24 +82,22 @@ public class Controller {
     @FXML
     private void nextInstruction() {
         switch (currentImage) {
-            case 1: {
+            case 1 -> {
                 showNextInstruction();
                 instructionText.setText("Example. \n" +
                         "Demonstrate the correct solution to these tasks");
-                break;
             }
-            case 2: {
+            case 2 -> {
                 showNextInstruction();
-                instructionText.setText("CAUTION\n" +
-                        "\n" +
-                        "1. In each complex figure there is an elements, it is of the same size and are also located, as a sample.\n" +
-                        "\n" +
-                        "2. In each complex figure always have an element and it is always only one.");
+                instructionText.setText("""
+                        CAUTION
+
+                        1. In each complex figure there is an elements, it is of the same size and are also located, as a sample.
+
+                        2. In each complex figure always have an element and it is always only one.""");
                 startTestButton.setDisable(false);
-                break;
             }
-            default: {
-                break;
+            default -> {
             }
         }
     }

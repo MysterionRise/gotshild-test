@@ -1,57 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.Group?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.Font?>
+<Group id="Gotshild Test" fx:id="rootGroup" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+       fx:controller="org.mystic.gotshild.Controller">
+    <Button layoutX="250.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#closeWindow" text="Exit"/>
+    <Button fx:id="startTestButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"
+            onMouseClicked="#startGotshildTest" prefWidth="200.0" text="Start Gotshild Test" disable="true"/>
+    <TextField fx:id="userName" layoutX="14.0" layoutY="50.0" onMouseClicked="#clearTextField" prefWidth="200.0"
+               text="Enter your name"/>
+    <Label fx:id="label" layoutX="50.0" layoutY="75.0" prefWidth="400.0" visible="false">
+        <font>
+            <Font size="15.0"/>
+        </font>
+    </Label>
 
-<Group id="Gotshild Test" fx:id="rootGroup" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mystic.gotshild.Controller">
-    <children>
-        <Button layoutX="250.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#closeWindow" text="Exit" />
-        <Button fx:id="startTestButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#startGotshildTest" prefWidth="200.0" text="Start Gotshild Test" disable="true" />
-        <TextField fx:id="userName" layoutX="14.0" layoutY="50.0" onMouseClicked="#clearTextField" prefWidth="200.0" text="Enter your name" />
-        <Label fx:id="label" layoutX="50.0" layoutY="75.0" prefWidth="400.0" text="" visible="false">
-            <font>
-                <Font size="15.0" />
-            </font>
-        </Label>
-
-        <TextArea fx:id="instructionText" editable="false" layoutX="200.0" layoutY="100.0" prefHeight="175.0"
-                  prefWidth="400.0"
-                  text="Each complex figure is one of the following elements. Which of these elements is contained in each complex figure in the picture?"
-                  wrapText="true"/>
-      <ImageView fx:id="imageView" fitHeight="478.0" fitWidth="456.0" layoutX="162.0" layoutY="250.0" onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../instruction-1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="patternA" fitHeight="120.0" fitWidth="130.0" layoutX="32.0" layoutY="76.0" onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../easy_figures/A.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="patternB" fitHeight="120.0" fitWidth="130.0" layoutX="162.0" layoutY="76.0" onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../easy_figures/B.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="patternV" fitHeight="120.0" fitWidth="130.0" layoutX="273.0" layoutY="76.0" onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../easy_figures/V.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="patternG" fitHeight="120.0" fitWidth="130.0" layoutX="358.0" layoutY="76.0" onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../easy_figures/G.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="patternD" fitHeight="120.0" fitWidth="130.0" layoutX="468.0" layoutY="76.0" onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../easy_figures/D.jpg" />
-         </image>
-      </ImageView>
-    </children>
+    <TextArea fx:id="instructionText" editable="false" layoutX="200.0" layoutY="100.0" prefHeight="175.0"
+              prefWidth="400.0"
+              text="Each complex figure is one of the following elements. Which of these elements is contained in each complex figure in the picture?"
+              wrapText="true"/>
+    <ImageView fx:id="imageView" fitHeight="478.0" fitWidth="456.0" layoutX="162.0" layoutY="250.0"
+               onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../instruction-1.jpg"/>
+    </ImageView>
+    <ImageView fx:id="patternA" fitHeight="120.0" fitWidth="130.0" layoutX="32.0" layoutY="76.0"
+               onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
+        <Image url="@../easy_figures/A.jpg"/>
+    </ImageView>
+    <ImageView fx:id="patternB" fitHeight="120.0" fitWidth="130.0" layoutX="162.0" layoutY="76.0"
+               onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
+        <Image url="@../easy_figures/B.jpg"/>
+    </ImageView>
+    <ImageView fx:id="patternV" fitHeight="120.0" fitWidth="130.0" layoutX="273.0" layoutY="76.0"
+               onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
+        <Image url="@../easy_figures/V.jpg"/>
+    </ImageView>
+    <ImageView fx:id="patternG" fitHeight="120.0" fitWidth="130.0" layoutX="358.0" layoutY="76.0"
+               onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
+        <Image url="@../easy_figures/G.jpg"/>
+    </ImageView>
+    <ImageView fx:id="patternD" fitHeight="120.0" fitWidth="130.0" layoutX="468.0" layoutY="76.0"
+               onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true" visible="false">
+        <Image url="@../easy_figures/D.jpg"/>
+    </ImageView>
 </Group>
