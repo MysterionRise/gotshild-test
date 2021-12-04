@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 public class Controller {
     public static final int SIZE = 30;
@@ -57,7 +58,7 @@ public class Controller {
 
     @FXML
     private void startGotshildTest() throws FileNotFoundException {
-        if (!userName.getText().equalsIgnoreCase("Enter your name") && userName.getText().length() > 0) {
+        if (!userName.getText().equalsIgnoreCase("Введите свое имя") && userName.getText().length() > 0) {
             out = new PrintWriter((userName.getText() + (System.currentTimeMillis() % 100000)) + ".txt");
             this.login = userName.getText();
             out.println(login);
@@ -84,17 +85,17 @@ public class Controller {
         switch (currentImage) {
             case 1 -> {
                 showNextInstruction();
-                instructionText.setText("Example. \n" +
-                        "Demonstrate the correct solution to these tasks");
+                instructionText.setText("""
+                         Пример корректного решения трех примеров задач!""");
             }
             case 2 -> {
                 showNextInstruction();
                 instructionText.setText("""
-                        CAUTION
+                        ВНИМАНИЕ
 
-                        1. In each complex figure there is an elements, it is of the same size and are also located, as a sample.
+                        1. В каждой составной фигуре есть элемент который в точности такого же размера и положения как в примере
 
-                        2. In each complex figure always have an element and it is always only one.""");
+                        2.В каждой составной фигурет такой элемент один и только один""");
                 startTestButton.setDisable(false);
             }
             default -> {
@@ -104,7 +105,7 @@ public class Controller {
 
     private void showNextInstruction() {
         currentImage++;
-        final String url = this.getClass().getResource("/instruction-" + currentImage + ".jpg").toString();
+        final String url = Objects.requireNonNull(this.getClass().getResource("/instruction-" + currentImage + ".jpg")).toString();
         imageView.setImage(new Image(url));
     }
 
@@ -112,11 +113,11 @@ public class Controller {
         if (step > SIZE) {
             setPatternsVisible(false);
             instructionText.setVisible(true);
-            instructionText.setText("You successfully finish the test! ");
+            instructionText.setText("Вы успешно завершили выполнение теста! ");
             return;
         }
         final long startTime = System.currentTimeMillis();
-        String url = this.getClass().getResource("/tasks/" + step + ".jpg").toString();
+        String url = Objects.requireNonNull(this.getClass().getResource("/tasks/" + step + ".jpg")).toString();
         ImageView task = new ImageView(new Image(url));
         task.setLayoutX(100);
         task.setLayoutY(250);

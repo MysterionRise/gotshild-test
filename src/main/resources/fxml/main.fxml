@@ -10,7 +10,7 @@
     <Button fx:id="startTestButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"
             onMouseClicked="#startGotshildTest" prefWidth="200.0" text="Start Gotshild Test" disable="true"/>
     <TextField fx:id="userName" layoutX="14.0" layoutY="50.0" onMouseClicked="#clearTextField" prefWidth="200.0"
-               text="Enter your name"/>
+               text="Введите свое имя"/>
     <Label fx:id="label" layoutX="50.0" layoutY="75.0" prefWidth="400.0" visible="false">
         <font>
             <Font size="15.0"/>
@@ -19,7 +19,7 @@
 
     <TextArea fx:id="instructionText" editable="false" layoutX="200.0" layoutY="100.0" prefHeight="175.0"
               prefWidth="400.0"
-              text="Each complex figure is one of the following elements. Which of these elements is contained in each complex figure in the picture?"
+              text="Каждая составная фигура содержитт один из представленных базовых элементов. Какой из этих элементов содержится в каждой составной фигуре?"
               wrapText="true"/>
     <ImageView fx:id="imageView" fitHeight="478.0" fitWidth="456.0" layoutX="162.0" layoutY="250.0"
                onMouseClicked="#nextInstruction" pickOnBounds="true" preserveRatio="true">
